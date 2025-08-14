@@ -1,11 +1,11 @@
 # Discussion & Results
 
-*Generated on 2025-08-09 from 2018-01-02 → 2025-07-29 data.*
+*Generated on 2025-08-13 from 2018-01-02 → 2025-07-29 data.*
 
 ## Executive summary
 
-- MSFT shows short-lived follow-through after activity spikes (**baseline half-life ≈ 3.01d**); others exhibit **no forward drift** (δ≈0).
-- For SPY, IRFs indicate contemporaneous jumps only (α=52.6 bp).
+- Across assets, activity spikes produce **same-day moves with little/no follow-through** (δ≈0).
+- For SPY, IRFs indicate contemporaneous jumps only (α=66.4 bp).
 - For ETH, IRFs also point to same-day effects only (α=-118.1 bp).
 - ETH same-day regression: Δfees_t → r_t has a **positive** slope (coef=13.5 bp, p=0.223, R²=0.001).
 
@@ -13,17 +13,17 @@
 
 We estimate OLS models of next-day returns on activity deltas with rate controls and AR(1). Overall, **predictive power is weak**, consistent with prices reacting contemporaneously to activity shocks.
 
-- **SPY** (act+rates+ar): 1 vars at p<0.05 (1 at p<0.10); top |t|: d_spy_earnings (coef=-217.4 bp, p=0.048).
-- **MSFT** (act+rates+ar): 2 vars at p<0.05 (3 at p<0.10); top |t|: msft_earnings_lag1 (coef=-5.7 bp, p=0.048).
-- **ETH** (act+rates+ar): 0 vars at p<0.05 (0 at p<0.10); top |t|: oil_consumption_lag1 (coef=-0.0 bp, p=0.128).
-- **OIL** (act+rates+ar): 0 vars at p<0.05 (0 at p<0.10); top |t|: d_msft_earnings (coef=-235.8 bp, p=0.208).
+- **SPY** (act+rates+ar): 0 vars at p<0.05 (1 at p<0.10); top |t|: d_spy_earnings (coef=-164.8 bp, p=0.092).
+- **MSFT** (act+rates+ar): 0 vars at p<0.05 (0 at p<0.10); top |t|: eth_fees_lag1 (coef=-0.0 bp, p=0.131).
+- **ETH** (act+rates+ar): 2 vars at p<0.05 (3 at p<0.10); top |t|: spy_earnings_lag1 (coef=-0.0 bp, p=0.016).
+- **OIL** (act+rates+ar): 0 vars at p<0.05 (0 at p<0.10); top |t|: d_oil_consumption (coef=251.4 bp, p=0.271).
 
 ## Branching / self-exciting impulse responses
 
 We identify high-percentile activity shocks and average forward returns in event time. Fitting an exponential **g(t)=α·exp(−δt)** shows α captures the same-day jump, while δ captures any follow-through. Below we report **baseline-specification** parameters and IRF plots (p90 shocks over a rolling ≈2y window, first-of-run with cooldown=20d, **t=0 included**, winsorized mean 1%, returns residualized on **AR(1)+GS3M+GS10**).
 
-- **SPY**: α=52.6 bp, no forward drift (δ≈0), fit R²=-0.000 (n_shocks=24, pctl=0.9, resid=ar+rates).
-- **MSFT**: α=-39.7 bp, half-life ≈ 3.01d, fit R²=0.196 (n_shocks=23, pctl=0.9, resid=ar+rates).
+- **SPY**: α=66.4 bp, no forward drift (δ≈0), fit R²=-0.000 (n_shocks=24, pctl=0.9, resid=ar+rates).
+- **MSFT**: α=111.9 bp, no forward drift (δ≈0), fit R²=-0.000 (n_shocks=24, pctl=0.9, resid=ar+rates).
 - **ETH**: α=-118.1 bp, half-life ≈ 3.80d, fit R²=0.124 (n_shocks=51, pctl=0.9, resid=ar+rates).
 - **OIL**: α=120.8 bp, no forward drift (δ≈0), fit R²=-0.000 (n_shocks=67, pctl=0.9, resid=ar+rates).
 
@@ -48,8 +48,8 @@ Same-day OLS of r_t on Δfees_t (HAC standard errors, SPY trading-day calendar) 
 
 ## Earnings trend robustness (2–4 quarters)
 
-- **SPY**: 2Q: -71.9 bp (p=0.461); 3Q: -65.5 bp (p=0.356); 4Q: -91.3 bp (p=0.120).  sig@5%=0.
-- **MSFT**: 2Q: -50.9 bp (p=0.645); 3Q: -90.3 bp (p=0.042); 4Q: -68.9 bp (p=0.455).  sig@5%=1.
+- **SPY**: 2Q: -136.5 bp (p=0.168); 3Q: -103.0 bp (p=0.139); 4Q: -84.9 bp (p=0.146).  sig@5%=0.
+- **MSFT**: 2Q: -83.2 bp (p=0.457); 3Q: -40.0 bp (p=0.412); 4Q: +49.6 bp (p=0.600).  sig@5%=0.
 
 ## Monthly rate changes vs returns
 

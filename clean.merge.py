@@ -24,8 +24,8 @@ PRICE_FILES = ["spy_price", "msft_price", "eth_price", "oil_price"]
 # name -> (date_column, freq_flag)
 # freq_flag: 'Q' (quarterly), 'M' (monthly), None (already daily)
 ACTIVITY_FILES = {
-    "spy_earnings": ("quarter end", "Q"),
-    "msft_earnings": ("quarter end", "Q"),
+    "spy_earnings": ("Earnings Announced", "Q"),
+    "msft_earnings": ("Earnings Announced", "Q"),
     "eth_fees": ("Date", None),
     "oil_consumption": ("Date", "M"),
     "GS3M": ("observation_date", None),   
