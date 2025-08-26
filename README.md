@@ -1,5 +1,5 @@
-We test whether economic activity shocks create cascading returns across equities, crypto,
-and commodities and find such ripple effects are largely absent. Analyzing the S&P 500,
+We test whether economic activity shocks create cascading returns across equities, commodities, and digital assets, 
+and find such ripple effects are largely absent. Analyzing the S&P 500,
 Microsoft, Ethereum, and WTI crude oil from 2018 to 2025, we examine if changes in funda-
 mental activity like earnings, network fees, or consumption trigger self-exciting price dynamics. Our frame-
 work combines predictive regressions with impulse response analysis to model these effects.
